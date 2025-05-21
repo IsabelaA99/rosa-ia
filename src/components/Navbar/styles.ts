@@ -28,7 +28,7 @@ export const getNavbarStyles = (isMobile: boolean) => ({
         gap: '100px',
     },
     li: {
-        fontSize: '14px',
+        fontSize: '13.5px',
         lineHeight: '14.63px',
         cursor: 'pointer',
         background: 'linear-gradient(to right,  #8b3a45, #d45e6e)',

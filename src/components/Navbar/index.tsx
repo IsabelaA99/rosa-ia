@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { getNavbarStyles } from './styles'; // ajuste o caminho conforme necessário
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 export function Navbar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,22 +22,25 @@ export function Navbar() {
 
   const styles = getNavbarStyles(isMobile);
 
-  function aindaNão() {
-    return alert('Em desenvolvimento...');
+  function homeFunc() {
+    navigate('/');
+  }
+  function aboutFunc() {
+    navigate('/sobre');
   }
 
   return (
     <nav style={styles.nav}>
-      <img src="/img/logo.png" alt="Logo" style={styles.logo} />
-
+      <img onClick={homeFunc} src="/img/logo.png" alt="Logo" style={styles.logo} />
       {!isMobile && (
         <ul style={styles.ul}>
-          <li onClick={aindaNão} style={styles.li}><strong>SOBRE</strong></li>
-          <li onClick={aindaNão} style={styles.li}><strong>SERVIÇOS</strong></li>
-          <li onClick={aindaNão} style={styles.li}><strong>TECNOLOGIAS</strong></li>
-          <li onClick={aindaNão} style={styles.li}><strong>COMO FAZER</strong></li>
-          <li onClick={aindaNão}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
-          <li onClick={aindaNão}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
+          <li onClick={homeFunc} style={styles.li}><strong>HOME</strong></li>
+          <li onClick={aboutFunc} style={styles.li}><strong>SOBRE</strong></li>
+          <li onClick={aboutFunc} style={styles.li}><strong>SERVIÇOS</strong></li>
+          <li onClick={aboutFunc} style={styles.li}><strong>TECNOLOGIAS</strong></li>
+          <li onClick={aboutFunc} style={styles.li}><strong>COMO FAZER</strong></li>
+          <li onClick={aboutFunc}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
+          <li onClick={aboutFunc}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
         </ul>
       )}
 
@@ -55,12 +61,12 @@ export function Navbar() {
                   size={24}
                   color="#8b3a45"
                   onClick={() => setIsMenuOpen(false)} style={styles.closeIcon} />
-                <li onClick={aindaNão} style={styles.li}><strong>SOBRE</strong></li>
-                <li onClick={aindaNão} style={styles.li}><strong>SERVIÇOS</strong></li>
-                <li onClick={aindaNão} style={styles.li}><strong>TECNOLOGIAS</strong></li>
-                <li onClick={aindaNão} style={styles.li}><strong>COMO FAZER</strong></li>
-                <li onClick={aindaNão}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
-                <li onClick={aindaNão}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
+                <li onClick={aboutFunc} style={styles.li}><strong>SOBRE</strong></li>
+                <li onClick={aboutFunc} style={styles.li}><strong>SERVIÇOS</strong></li>
+                <li onClick={aboutFunc} style={styles.li}><strong>TECNOLOGIAS</strong></li>
+                <li onClick={aboutFunc} style={styles.li}><strong>COMO FAZER</strong></li>
+                <li onClick={aboutFunc}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
+                <li onClick={aboutFunc}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
               </div>
             </>
           )}
