@@ -35,25 +35,25 @@ export function About() {
             name: 'PROF.SALES',
             role: '(COORDERNADOR)',
             desc: 'Coordenador, Idealizador do Projeto e Professor de Radiologianenatis justo.',
-            img: 'public/img/prof-Sales.png'
+            img: '../../../public/img/prof-Sales.png'
         },
         {
             name: 'CARLA LOPES',
             role: '(GERENTE)',
             desc: 'Nosso maior desafio não é só desenvolver tecnologia, mas garantir que ela chegue de forma simples e afetiva às mulheres que mais precisam',
-            img: 'public/img/carla.png'
+            img: '../../../public/img/carla.png'
         },
         {
             name: 'DAVI ARAGÃO',
             role: '(DESENVOLVEDOR)',
             desc: 'Coordenador, Idealizador do Projeto e Professor de Radiologianenatis justo.',
-            img: 'public/img/davi.png'
+            img: '../../../public/img/davi.png'
         },
         {
             name: 'MARCOS',
             role: '(UX/UI DESIGN)',
             desc: 'Coordenador, Idealizador do Projeto e Professor de Radiologianenatis justo.',
-            img: 'public/img/marcos.png'
+            img: '../../../public/img/marcos.png'
         }
     ];
 

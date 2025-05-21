@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { getNavbarStyles } from './styles'; // ajuste o caminho conforme necessário
 import { Navigate, useNavigate } from 'react-router-dom';
+import { ThemeToggle } from '../ThemeToggle';
 
 
 export function Navbar() {
@@ -32,6 +33,7 @@ export function Navbar() {
   return (
     <nav style={styles.nav}>
       <img onClick={homeFunc} src="/img/logo.png" alt="Logo" style={styles.logo} />
+
       {!isMobile && (
         <ul style={styles.ul}>
           <li onClick={homeFunc} style={styles.li}><strong>HOME</strong></li>
