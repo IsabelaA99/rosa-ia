@@ -41,7 +41,7 @@ const baseStyles: Record<string, CSSProperties> = {
         background: 'linear-gradient(to right, #8b3a45, #d45e6e)',
         color: 'transparent',
         WebkitBackgroundClip: 'text',
-        textAlign: 'justify',
+        textAlign: 'initial',
         backgroundClip: 'text',
         fontSize: '1.2rem',
         marginBottom: '20px',

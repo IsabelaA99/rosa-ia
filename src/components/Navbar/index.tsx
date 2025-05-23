@@ -29,6 +29,9 @@ export function Navbar() {
   function aboutFunc() {
     navigate('/sobre');
   }
+  function aindaNao() {
+    alert('Em desenvolvimento...')
+  }
 
   return (
     <nav style={styles.nav}>
@@ -38,11 +41,11 @@ export function Navbar() {
         <ul style={styles.ul}>
           <li onClick={homeFunc} style={styles.li}><strong>HOME</strong></li>
           <li onClick={aboutFunc} style={styles.li}><strong>SOBRE</strong></li>
-          <li onClick={aboutFunc} style={styles.li}><strong>SERVIÇOS</strong></li>
-          <li onClick={aboutFunc} style={styles.li}><strong>TECNOLOGIAS</strong></li>
-          <li onClick={aboutFunc} style={styles.li}><strong>COMO FAZER</strong></li>
-          <li onClick={aboutFunc}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
-          <li onClick={aboutFunc}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
+          <li onClick={aindaNao} style={styles.li}><strong>SERVIÇOS</strong></li>
+          <li onClick={aindaNao} style={styles.li}><strong>TECNOLOGIAS</strong></li>
+          <li onClick={aindaNao} style={styles.li}><strong>COMO FAZER</strong></li>
+          <li onClick={aindaNao}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
+          <li onClick={aindaNao}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
         </ul>
       )}
 
