@@ -7,7 +7,8 @@ interface SectionProps {
     id?: string;
     style?: React.CSSProperties;
     fullWidth?: boolean;
-    align?: 'left' | 'right';          // NOVO
+    align?: 'left' | 'right';
+    offset?: number; // Valor em pixels
 }
 
 export function Section({
@@ -15,7 +16,8 @@ export function Section({
     id = '',
     style = {},
     fullWidth = false,
-    align = 'left',
+    align = 'right',
+    offset = 150, // valor padrão
 }: SectionProps) {
     const [isMobile, setIsMobile] = useState(false);
 
@@ -31,10 +33,9 @@ export function Section({
     /* ----- posicionamento lateral + direção do flex ----- */
     const lateralMargin: CSSProperties = !isMobile
         ? align === 'right'
-            ? { marginLeft: 'auto', marginRight: '80px' }
-            : { marginLeft: '80px', marginRight: 'auto' }
+            ? { marginLeft: 'auto', marginRight: `${offset}px` }
+            : { marginLeft: `${offset}px`, marginRight: 'auto' }
         : { margin: '0 auto' };
-
     const flexDirection: CSSProperties = !isMobile
         ? align === 'right'
             ? { flexDirection: 'row-reverse' }   // inverte (imagem 1º)

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - RosaIA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF7F9;
+            /* Light pink background */
+        }
+
+        .text-rosa-primary {
+            color: #D6336C;
+            /* A pink shade for titles/accents */
+        }
+
+        .bg-rosa-accent {
+            background-color: #FCE4EC;
+            /* Lighter pink for section backgrounds */
+        }
+
+        .bg-rosa-dark {
+            background-color: #AD1457;
+            /* Darker pink for contrasts */
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        /* Custom styles for zig-zag effect */
+        @media (min-width: 768px) {
+
+            /* md breakpoint */
+            .zig-zag-container>div:nth-child(odd) .zig-zag-content {
+                order: 1;
+            }
+
+            .zig-zag-container>div:nth-child(odd) .zig-zag-image-placeholder {
+                order: 2;
+            }
+
+            .zig-zag-container>div:nth-child(even) .zig-zag-content {
+                order: 2;
+            }
+
+            .zig-zag-container>div:nth-child(even) .zig-zag-image-placeholder {
+                order: 1;
+            }
+        }
+
+        .team-member-card {
+            background-color: #FFF;
+            border-radius: 0.75rem;
+            /* 12px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <header class="py-6 bg-white shadow-md">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center">
+                <svg class="h-10 w-10 text-rosa-primary mr-3" viewBox="0 0 24 24" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 7h2v2h-2z">
+                    </path>
+                </svg>
+                <span class="text-2xl font-bold text-rosa-primary">RosaIA</span>
+            </div>
+            <nav>
+                <a href="#"
+                    class="text-gray-600 hover:text-rosa-primary px-3 py-2 rounded-md text-sm font-medium">Início</a>
+                <a href="#" class="text-rosa-primary font-semibold px-3 py-2 rounded-md text-sm">Sobre</a>
+                <a href="#"
+                    class="text-gray-600 hover:text-rosa-primary px-3 py-2 rounded-md text-sm font-medium">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <h1 class="text-4xl font-bold text-rosa-primary mb-12 text-center">Sobre o Projeto RosaIA</h1>
+
+        <div class="space-y-16 zig-zag-container">
+
+            <section class="md:flex md:items-center md:space-x-12 section-card">
+                <div class="md:w-1/2 zig-zag-content">
+                    <h2 class="text-3xl font-semibold text-rosa-primary mb-6">O que é o RosaIA?</h2>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        O RosaIA é um protótipo de chatbot educacional integrado ao WhatsApp, concebido para apoiar a
+                        prevenção do câncer de mama por meio de informações confiáveis e humanizadas. Utilizando
+                        algoritmos de Processamento de Linguagem Natural e Aprendizado de Máquina, o sistema opera na
+                        infraestrutura Python + Twilio e se apoia no modelo multimodal Gemini, da Google DeepMind. Seu
+                        conteúdo foi cuidadosamente treinado e validado por especialistas em saúde pública e radiologia,
+                        garantindo respostas claras, empáticas e alinhadas às diretrizes do Ministério da Saúde e do
+                        INCA.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 zig-zag-image-placeholder">
+                    <div class="bg-rosa-accent aspect-video rounded-lg flex items-center justify-center">
+                        <svg class="w-24 h-24 text-rosa-primary opacity-50" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:flex md:items-center md:space-x-12 section-card">
+                <div class="md:w-1/2 mt-8 md:mt-0 zig-zag-image-placeholder">
+                    <div class="bg-rosa-accent aspect-video rounded-lg flex items-center justify-center">
+                        <svg class="w-24 h-24 text-rosa-primary opacity-50" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="md:w-1/2 zig-zag-content">
+                    <h2 class="text-3xl font-semibold text-rosa-primary mb-6">Motivação, Contexto e Impacto</h2>
+                    <div class="space-y-4 text-lg leading-relaxed text-gray-700">
+                        <div>
+                            <h3 class="text-xl font-medium text-rosa-primary mb-2">Motivação</h3>
+                            <p>O câncer de mama é a principal causa de mortalidade por câncer entre mulheres no Brasil e
+                                no mundo, em grande parte devido ao diagnóstico tardio e à baixa adesão a exames
+                                preventivos. A carência de informação acessível e de fácil compreensão agrava esse
+                                cenário, especialmente em populações com acesso limitado aos serviços de saúde.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-rosa-primary mb-2">Contexto</h3>
+                            <p>O WhatsApp é uma das plataformas de mensagens mais populares no país e oferece um canal
+                                de baixo custo e alto alcance para iniciativas de educação em saúde. Ao disponibilizar
+                                um assistente virtual na ponta dos dedos, o RosaIA promove interação em tempo real,
+                                adaptada ao perfil de cada usuária, sem demandar instalações adicionais ou deslocamentos
+                                até unidades de saúde.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-rosa-primary mb-2">Impacto Esperado</h3>
+                            <p>Estudos iniciais indicam que o RosaIA tem potencial para ampliar significativamente o
+                                acesso à informação sobre prevenção mamária, incentivar a realização de autoexames e
+                                mamografias, e fortalecer a alfabetização em saúde. Essa abordagem pode contribuir para
+                                a detecção precoce do câncer de mama e, consequentemente, para a redução das taxas de
+                                mortalidade associadas à doença.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:flex md:items-center md:space-x-12 section-card">
+                <div class="md:w-1/2 zig-zag-content">
+                    <h2 class="text-3xl font-semibold text-rosa-primary mb-6">Nossa Missão</h2>
+                    <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                        <div>
+                            <h3 class="text-xl font-medium text-rosa-primary mb-2">Visão</h3>
+                            <p>Ser referência em soluções de Inteligência Artificial voltadas à educação em saúde,
+                                promovendo práticas preventivas e o empoderamento das usuárias por meio de tecnologia
+                                ética e acessível.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-rosa-primary mb-2">Valores</h3>
+                            <ul class="list-disc list-inside space-y-1 pl-4">
+                                <li><strong>Empatia:</strong> Interação acolhedora e respeitosa às dúvidas e emoções das
+                                    usuárias.</li>
+                                <li><strong>Rigor Científico:</strong> Conteúdo estruturado com base em fontes oficiais
+                                    e validação por especialistas.</li>
+                                <li><strong>Privacidade e Segurança:</strong> Criptografia das comunicações (HTTPS) e
+                                    adoção de boas práticas para proteção de dados.</li>
+                                <li><strong>Acessibilidade:</strong> Linguagem clara, sem jargões, em uma plataforma
+                                    amplamente difundida.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-rosa-primary mb-2">Objetivo Geral</h3>
+                            <p>Desenvolver e validar uma assistente virtual que forneça informações personalizadas sobre
+                                prevenção do câncer de mama, estimulando hábitos saudáveis e adesão a exames periódicos.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-rosa-primary mb-2">Objetivos Específicos</h3>
+                            <ol class="list-decimal list-inside space-y-1 pl-4">
+                                <li>Criar uma API para comunicação fluida entre o WhatsApp e o modelo Gemini.</li>
+                                <li>Treinar a IA com conteúdos validados por especialistas em saúde pública e
+                                    radiologia.</li>
+                                <li>Garantir respostas empáticas, seguras e que estimulem a busca por apoio
+                                    profissional.</li>
+                                <li>Validar tecnicamente o sistema por meio de testes controlados e avaliações
+                                    qualitativas.</li>
+                                <li>Assegurar a privacidade e a segurança das informações trocadas.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 zig-zag-image-placeholder">
+                    <div class="bg-rosa-accent aspect-video rounded-lg flex items-center justify-center">
+                        <svg class="w-24 h-24 text-rosa-primary opacity-50" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <h2 class="text-3xl font-bold text-rosa-primary mb-10 text-center">2.6. Equipe</h2>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-rosa-primary mb-6">Professores</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="team-member-card p-6 text-center">
+                            <img src="https://placehold.co/150x150/F8BBD0/AD1457?text=Foto" alt="Foto do Professor 1"
+                                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-1">Nome Completo Professor 1</h4>
+                            <p class="text-rosa-primary mb-1">Função no Projeto</p>
+                            <a href="#" class="text-sm text-gray-600 hover:text-rosa-primary hover:underline">Contato
+                                Profissional (ex: LinkedIn)</a>
+                        </div>
+                        <div class="team-member-card p-6 text-center">
+                            <img src="https://placehold.co/150x150/F8BBD0/AD1457?text=Foto" alt="Foto do Professor 2"
+                                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-1">Nome Completo Professor 2</h4>
+                            <p class="text-rosa-primary mb-1">Função no Projeto</p>
+                            <a href="#" class="text-sm text-gray-600 hover:text-rosa-primary hover:underline">Contato
+                                Profissional</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-rosa-primary mb-6">Alunos</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="team-member-card p-6 text-center">
+                            <img src="https://placehold.co/150x150/F8BBD0/AD1457?text=Foto" alt="Foto do Aluno 1"
+                                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-1">Nome Completo Aluno 1</h4>
+                            <p class="text-rosa-primary mb-1">Função no Projeto</p>
+                            <a href="#" class="text-sm text-gray-600 hover:text-rosa-primary hover:underline">Contato
+                                Profissional</a>
+                        </div>
+                        <div class="team-member-card p-6 text-center">
+                            <img src="https://placehold.co/150x150/F8BBD0/AD1457?text=Foto" alt="Foto do Aluno 2"
+                                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-1">Nome Completo Aluno 2</h4>
+                            <p class="text-rosa-primary mb-1">Função no Projeto</p>
+                            <a href="#" class="text-sm text-gray-600 hover:text-rosa-primary hover:underline">Contato
+                                Profissional</a>
+                        </div>
+                        <div class="team-member-card p-6 text-center">
+                            <img src="https://placehold.co/150x150/F8BBD0/AD1457?text=Foto" alt="Foto do Aluno 3"
+                                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-1">Nome Completo Aluno 3</h4>
+                            <p class="text-rosa-primary mb-1">Função no Projeto</p>
+                            <a href="#" class="text-sm text-gray-600 hover:text-rosa-primary hover:underline">Contato
+                                Profissional</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-rosa-primary mb-6">Colaboradores Externos</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="team-member-card p-6 text-center">
+                            <img src="https://placehold.co/150x150/F8BBD0/AD1457?text=Foto" alt="Foto do Colaborador 1"
+                                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-1">Nome Colaborador Externo 1</h4>
+                            <p class="text-rosa-primary mb-1">Função no Projeto</p>
+                            <a href="#" class="text-sm text-gray-600 hover:text-rosa-primary hover:underline">Contato
+                                Profissional</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 RosaIA. Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-400 mt-1">Uma iniciativa para a conscientização e prevenção do câncer de mama.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
