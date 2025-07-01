@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from '../components/Navbar';
-import { Section } from '../components/Section';
+import { Section } from '../components/Section'; // Mantenho, caso tenha algum estilo ou lógica interna
 import { MdArrowForward } from 'react-icons/md';
-import { getStyles } from '../components/Section/styles';
+import { getStyles } from './styles'; // Caminho corrigido para ./styles (assumindo que styles.ts está na mesma pasta)
 // import Footer from '../Footer'; // Descomente se quiser usar
 
 export function Home() {
-    const isMobile = window.innerWidth <= 768;
+    // Inicializa isMobile com base no window.innerWidth atual
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        // Define o estado inicial de isMobile após a montagem do componente
+        // Isso previne que window seja undefined durante a renderização inicial no servidor (se houver SSR)
+        setIsMobile(window.innerWidth <= 768);
+
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        // Adiciona o event listener para redimensionamento da janela
+        window.addEventListener('resize', handleResize);
+
+        // Função de limpeza: remove o event listener quando o componente é desmontado
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []); // O array vazio assegura que o efeito rode apenas uma vez (no mount e no unmount)
+
     const styles = getStyles(isMobile);
 
-    function aindaNão() {
+    function handleChatClick() {
         alert('Em desenvolvimento...');
     }
 
@@ -30,10 +50,11 @@ export function Home() {
                         </div>
 
                         <div style={styles.container2}>
-                            <button onClick={aindaNão} style={styles.button}>Converse agora com a Dra. Rosa</button>
-                            <a onClick={aindaNão} href="#">
-                                <MdArrowForward size={40} color="#d45e6e" style={styles.arrowIcon} />
-                            </a>
+                            <button onClick={handleChatClick} style={styles.button}>Converse agora com a Dra. Rosa</button>
+                            {/* Ajustado para ser um span clicável, já que o alert não é uma navegação */}
+                            <span onClick={handleChatClick} style={styles.arrowIcon}>
+                                <MdArrowForward size={40} color="#d45e6e" />
+                            </span>
                         </div>
                     </div>
 

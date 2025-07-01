@@ -1,56 +1,23 @@
-// src/components/Section.tsx
-import React, { useEffect, useState, ReactNode, CSSProperties } from 'react';
-import { getStyles } from './styles';
+import React, { ReactNode } from 'react';
+// Certifique-se de que este caminho aponta para os estilos APENAS da Section
+import { sectionStyles } from './styles';
 
 interface SectionProps {
     children: ReactNode;
     id?: string;
     style?: React.CSSProperties;
     fullWidth?: boolean;
-    align?: 'left' | 'right';
-    offset?: number; // Valor em pixels
 }
 
-export function Section({
-    children,
-    id = '',
-    style = {},
-    fullWidth = false,
-    align = 'right',
-    offset = 150, // valor padrão
-}: SectionProps) {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const onResize = () => setIsMobile(window.innerWidth <= 768);
-        onResize();
-        window.addEventListener('resize', onResize);
-        return () => window.removeEventListener('resize', onResize);
-    }, []);
-
-    const base = getStyles(isMobile);
-
-    /* ----- posicionamento lateral + direção do flex ----- */
-    const lateralMargin: CSSProperties = !isMobile
-        ? align === 'right'
-            ? { marginLeft: 'auto', marginRight: `${offset}px` }
-            : { marginLeft: `${offset}px`, marginRight: 'auto' }
-        : { margin: '0 auto' };
-    const flexDirection: CSSProperties = !isMobile
-        ? align === 'right'
-            ? { flexDirection: 'row-reverse' }   // inverte (imagem 1º)
-            : { flexDirection: 'row' }
-        : { flexDirection: 'column' };
-
+export function Section({ children, id = "", style = {}, fullWidth = false }: SectionProps) {
     return (
         <section
             id={id}
             style={{
-                ...base.sectionMain,
-                ...flexDirection,
-                ...lateralMargin,
+                ...sectionStyles.container,
                 ...style,
-                ...(fullWidth && { width: '100%', maxWidth: '100%' }),
+                // Aplica maxWidth: '100%' apenas se fullWidth for true
+                ...(fullWidth && { maxWidth: '100%' })
             }}
         >
             {children}

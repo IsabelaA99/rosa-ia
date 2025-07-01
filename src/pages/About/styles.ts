@@ -1,3 +1,4 @@
+// src/pages/About/styles.ts
 import { CSSProperties } from 'react';
 
 export const styles: Record<string, CSSProperties> = {
@@ -35,5 +36,15 @@ export const styles: Record<string, CSSProperties> = {
         height: '6rem',
         opacity: 0.5,
     },
+    teamSection: {
+        padding: '2rem 0',
+    },
+    carouselContainer: {
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 1rem',
+    },
+    sliderItem: {
+        padding: '0 10px',
+    },
 };
-
