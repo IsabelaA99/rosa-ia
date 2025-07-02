@@ -3,7 +3,7 @@ import { Navbar } from '../components/Navbar';
 import { Section } from '../components/Section'; // Mantenho, caso tenha algum estilo ou lógica interna
 import { MdArrowForward } from 'react-icons/md';
 import { getStyles } from './styles'; // Caminho corrigido para ./styles (assumindo que styles.ts está na mesma pasta)
-// import Footer from '../Footer'; // Descomente se quiser usar
+// import Footer from '../components/Footer'; // Descomente se quiser usar
 
 export function Home() {
     // Inicializa isMobile com base no window.innerWidth atual

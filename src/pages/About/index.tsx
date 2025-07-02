@@ -65,35 +65,36 @@ export function About() {
             img: '/img/carla.png'
         },
         {
+            name: 'VITORIA LAVRSISTA',
+            role: '(SUB GERENTE)',
+            desc: 'Responsavel pela pesquisa de artigos e treinamento da IA',
+            img: '/img/vitoria.png'
+        },
+        {
             name: 'YGOR',
-            role: '(CO-GERENTE)',
+            role: '(ANALISTA)',
             desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
             img: '/img/ygor.png'
         },
     ];
 
     const developers = [
+
         {
-            name: 'VITORIA LAVRSISTA',
-            role: '(DESENVOLVEDORA)',
-            desc: 'Desenvolvedora Backend, responsavel pela pesquisa de artigos e treinamento da IA',
-            img: '/img/vitoria.png'
-        },
-        {
-            name: 'ISA...',
-            role: '(DESENVOLVEDORA)',
-            desc: 'Desenvolvedora Frontend & Responsável pelo Site do Rosa.IA',
+            name: 'Isabela França',
+            role: '(DESENVOLVEDORA FRONTEND)',
+            desc: '“Traduzindo ideias em experiências digitais.”',
             img: '/img/isa.png'
         },
         {
             name: 'DAVI ARAGÃO',
-            role: '(DESENVOLVEDOR-FULLSTACK)',
+            role: '(DESENVOLVEDOR FULLSTACK)',
             desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
             img: '/img/davi.png'
         },
         {
             name: 'VICTOR AUGUSTO',
-            role: '(DESENVOLVEDOR-BACKEND)',
+            role: '(DESENVOLVEDOR BACKEND)',
             desc: 'Desenvolvedor Backend',
             img: '/img/victor.png'
         },
@@ -105,7 +106,7 @@ export function About() {
         },
         {
             name: 'LUCAS',
-            role: '(DESENVOLVEDOR-BACKEND)',
+            role: '(DESENVOLVEDOR BACKEND)',
             desc: 'Desenvolvedora Backend, responsavel pela pesquisa de artigos e treinamento da IA',
             img: '/img/lucas.png'
         },
