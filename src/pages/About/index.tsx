@@ -87,6 +87,12 @@ export function About() {
             img: '/img/isa.png'
         },
         {
+            name: 'Victória Emanuella',
+            role: '(DESENVOLVEDORA FRONTEND)',
+            desc: '',
+            img: '/img/emanuella.png'
+        },
+        {
             name: 'DAVI ARAGÃO',
             role: '(DESENVOLVEDOR FULLSTACK)',
             desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
@@ -112,32 +118,32 @@ export function About() {
         },
     ];
 
-    const radiologists = [
-        {
-            name: 'AMANDA',
-            role: '(DESENVOLVEDOR)',
-            desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-            img: '/img/davi.png'
-        },
-        {
-            name: 'JÚLIA',
-            role: '(DESENVOLVEDOR)',
-            desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-            img: '/img/davi.png'
-        },
-        {
-            name: 'ANA',
-            role: '(DESENVOLVEDOR)',
-            desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-            img: '/img/davi.png'
-        },
-        {
-            name: 'SUENE',
-            role: '(DESENVOLVEDOR)',
-            desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-            img: '/img/davi.png'
-        },
-    ];
+    // const radiologists = [
+    //     {
+    //         name: 'AMANDA',
+    //         role: '(DESENVOLVEDOR)',
+    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
+    //         img: '/img/davi.png'
+    //     },
+    //     {
+    //         name: 'JÚLIA',
+    //         role: '(DESENVOLVEDOR)',
+    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
+    //         img: '/img/davi.png'
+    //     },
+    //     {
+    //         name: 'ANA',
+    //         role: '(DESENVOLVEDOR)',
+    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
+    //         img: '/img/davi.png'
+    //     },
+    //     {
+    //         name: 'SUENE',
+    //         role: '(DESENVOLVEDOR)',
+    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
+    //         img: '/img/davi.png'
+    //     },
+    // ];
 
     return (
         <>
@@ -258,7 +264,7 @@ export function About() {
                     <h3 style={styles.pageTitle}>Radiologistas:</h3>
                     <div style={styles.carouselContainer}>
                         <Slider {...carouselSettings}>
-                            {radiologists.map((member, index) => (
+                            {/* {radiologists.map((member, index) => (
                                 <div key={index} style={styles.sliderItem}>
                                     <TeamMember
                                         name={member.name}
@@ -267,7 +273,7 @@ export function About() {
                                         img={member.img}
                                     />
                                 </div>
-                            ))}
+                            ))} */}
                         </Slider>
                     </div>
                 </section>
