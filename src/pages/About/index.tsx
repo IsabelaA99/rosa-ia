@@ -2,17 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { Section } from '../../components/Section';
 import { Card } from '../../components/Card';
 import { Icon } from '../../components/Icons'; // Importando o componente Icon
-
-import { styles } from './styles';
-import { Navbar } from '../../components/Navbar/index';
+import { styles } from './styles'; // Seus estilos específicos da página About
+import { Navbar } from '../../components/Navbar/index'; // Sua Navbar
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { TeamMember } from '../../components/TeamMember';
 import { cardStyles } from '../../components/Card/styles'; // Mantendo a importação, caso ainda use
 
+// Importe o LoadingProvider e o hook useLoading
+import { LoadingProvider, useLoading } from '../../contexts/LoadingContext';
 
-export function About() {
+// -----------------------------------------------------------------------------
+// Componente interno com o conteúdo da página About
+// Este componente usará o hook useLoading e conterá a lógica de carregamento
+// -----------------------------------------------------------------------------
+function AboutPageContent() {
+    const { stopLoading } = useLoading(); // Obtém a função para parar o loading
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -21,6 +27,16 @@ export function About() {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    // Simule o carregamento de dados ou a inicialização da página
+    useEffect(() => {
+        // Você pode ajustar o tempo com base no tempo real de carregamento de recursos.
+        // Por exemplo, se você buscar dados de uma API, chame stopLoading() após o fetch.
+        const timer = setTimeout(() => {
+            stopLoading(); // Indica que o carregamento da página "About" terminou
+        }, 1500); // Exemplo: 1.5 segundos para esta página
+        return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
+    }, [stopLoading]); // A dependência garante que o efeito seja reexecutado se stopLoading mudar
 
     const carouselSettings = {
         dots: true,
@@ -52,102 +68,24 @@ export function About() {
     };
 
     const leaders = [
-        {
-            name: 'PROF.SALES',
-            role: '(COORDENADOR)',
-            desc: 'Coordenador, Idealizador do Projeto e Professor de Radiologianenatis justo.',
-            img: '/img/prof-Sales.png'
-        },
-        {
-            name: 'CARLA LOPES',
-            role: '(GERENTE)',
-            desc: 'Nosso maior desafio não é só desenvolver tecnologia, mas garantir que ela chegue às mulheres que mais precisam.',
-            img: '/img/carla.png'
-        },
-        {
-            name: 'VITORIA LAVRSISTA',
-            role: '(SUB GERENTE)',
-            desc: 'Responsavel pela pesquisa de artigos e treinamento da IA',
-            img: '/img/vitoria.png'
-        },
-        {
-            name: 'YGOR',
-            role: '(ANALISTA)',
-            desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-            img: '/img/ygor.png'
-        },
+        { name: 'PROF.SALES', role: '(COORDENADOR)', desc: 'Coordenador, Idealizador do Projeto e Professor de Radiologianenatis justo.', img: '/img/prof-Sales.png' },
+        { name: 'CARLA LOPES', role: '(GERENTE)', desc: 'Nosso maior desafio não é só desenvolver tecnologia, mas garantir que ela chegue às mulheres que mais precisam.', img: '/img/carla.png' },
+        { name: 'VITORIA LAVRSISTA', role: '(SUB GERENTE)', desc: 'Responsavel pela pesquisa de artigos e treinamento da IA', img: '/img/vitoria.png' },
+        { name: 'YGOR', role: '(ANALISTA)', desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA', img: '/img/ygor.png' },
     ];
 
     const developers = [
-
-        {
-            name: 'Isabela França',
-            role: '(DESENVOLVEDORA FRONTEND)',
-            desc: '“Traduzindo ideias em experiências digitais.”',
-            img: '/img/isa.png'
-        },
-        {
-            name: 'Victória Emanuella',
-            role: '(DESENVOLVEDORA BACKEND/TESTER)',
-            desc: '',
-            img: '/img/emanuella.png'
-        },
-        {
-            name: 'DAVI ARAGÃO',
-            role: '(DESENVOLVEDOR FULLSTACK)',
-            desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-            img: '/img/davi.png'
-        },
-        {
-            name: 'VICTOR AUGUSTO',
-            role: '(DESENVOLVEDOR BACKEND)',
-            desc: 'Desenvolvedor Backend',
-            img: '/img/victor.png'
-        },
-        {
-            name: 'MARCOS',
-            role: '(UX/UI DESIGN)',
-            desc: 'UX/UI Designer do Rosa.IA, focado em acessibilidade e experiência intuitiva para democratizar a prevenção.',
-            img: '/img/marcos.png'
-        },
-        {
-            name: 'LUCAS',
-            role: '(DESENVOLVEDOR BACKEND)',
-            desc: 'Desenvolvedora Backend, responsavel pela pesquisa de artigos e treinamento da IA',
-            img: '/img/lucas.png'
-        },
+        { name: 'Isabela França', role: '(DESENVOLVEDORA FRONTEND)', desc: '“Traduzindo ideias em experiências digitais.”', img: '/img/isa.png' },
+        { name: 'Victória Emanuella', role: '(DESENVOLVEDORA BACKEND/TESTER)', desc: '', img: '/img/emanuella.png' },
+        { name: 'DAVI ARAGÃO', role: '(DESENVOLVEDOR FULLSTACK)', desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA', img: '/img/davi.png' },
+        { name: 'VICTOR AUGUSTO', role: '(DESENVOLVEDOR BACKEND)', desc: 'Desenvolvedor Backend', img: '/img/victor.png' },
+        { name: 'MARCOS', role: '(UX/UI DESIGN)', desc: 'UX/UI Designer do Rosa.IA, focado em acessibilidade e experiência intuitiva para democratizar a prevenção.', img: '/img/marcos.png' },
+        { name: 'LUCAS', role: '(DESENVOLVEDOR BACKEND)', desc: 'Desenvolvedora Backend, responsavel pela pesquisa de artigos e treinamento da IA', img: '/img/lucas.png' },
     ];
-
-    // const radiologists = [
-    //     {
-    //         name: 'AMANDA',
-    //         role: '(DESENVOLVEDOR)',
-    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-    //         img: '/img/davi.png'
-    //     },
-    //     {
-    //         name: 'JÚLIA',
-    //         role: '(DESENVOLVEDOR)',
-    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-    //         img: '/img/davi.png'
-    //     },
-    //     {
-    //         name: 'ANA',
-    //         role: '(DESENVOLVEDOR)',
-    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-    //         img: '/img/davi.png'
-    //     },
-    //     {
-    //         name: 'SUENE',
-    //         role: '(DESENVOLVEDOR)',
-    //         desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA',
-    //         img: '/img/davi.png'
-    //     },
-    // ];
 
     return (
         <>
-            <Navbar />
+            <Navbar /> {/* Sua Navbar, que agora estará abaixo do loading */}
             <main style={styles.main}>
                 <h1 style={styles.pageTitle}>Sobre o Projeto RosaIA</h1>
 
@@ -172,32 +110,32 @@ export function About() {
                 {/* Seções de Motivação, Contexto e Impacto */}
                 <Section>
                     <Card>
-                        <Icon name="motivation" /> {/* Adicionei o Icon aqui */}
+                        <Icon name="motivation" />
                         <h3 style={styles.subtitle}><strong>Motivação</strong></h3>
                         <p style={styles.text}>
                             O câncer de mama é a principal causa de mortalidade por câncer entre mulheres no Brasil e no mundo, em grande parte devido ao diagnóstico tardio e à baixa adesão a exames preventivos. A carência de informação acessível e de fácil compreensão agrava esse cenário, especialmente em populações com acesso limitado aos serviços de saúde.
                         </p>
                     </Card>
                     <Card>
-                        <Icon name="context" /> {/* Adicionei o Icon aqui */}
+                        <Icon name="context" />
                         <h3 style={styles.subtitle}><strong>Contexto</strong></h3>
                         <p style={styles.text}>
                             O WhatsApp é uma das plataformas de mensagens mais populares no país e oferece um canal de baixo custo e alto alcance para iniciativas de educação em saúde. Ao disponibilizar um assistente virtual na ponta dos dedos, o RosaIA promove interação em tempo real, adaptada ao perfil de cada usuária, sem demandar instalações adicionais ou deslocamentos até unidades de saúde.
                         </p>
                     </Card>
                     <Card>
-                        <Icon name="impact" /> {/* Adicionei o Icon aqui */}
+                        <Icon name="impact" />
                         <h3 style={styles.subtitle}><strong>Impacto Esperado</strong></h3>
                         <p style={styles.text}>
                             Estudos iniciais indicam que o RosaIA tem potencial para ampliar significativamente o acesso à informação sobre prevenção mamária, incentivar a realização de autoexames e mamografias, e fortalecer a alfabetização em saúde. Essa abordagem pode contribuir para a detecção precoce do câncer de mama e, consequentemente, para a redução das taxas de mortalidade associadas à doença.
                         </p>
                     </Card>
-                </Section >
+                </Section>
 
                 {/* Seções de Visão, Valores e Objetivos */}
                 <Section>
                     <Card>
-                        <Icon name="vision" /> {/* Adicionei o Icon aqui */}
+                        <Icon name="vision" />
                         <h3 style={styles.subtitle}><strong>Visão</strong></h3>
                         <p style={styles.text}>
                             Ser referência em soluções de Inteligência Artificial voltadas à educação em saúde,
@@ -206,7 +144,7 @@ export function About() {
                         </p>
                     </Card>
                     <Card>
-                        <Icon name="values" /> {/* Adicionei o Icon aqui */}
+                        <Icon name="values" />
                         <h3 style={styles.subtitle}><strong>Valores</strong></h3>
                         <p style={styles.text}>
                             <strong style={styles.strong}>Empatia:</strong> Interação acolhedora e respeitosa às dúvidas e emoções das usuárias.
@@ -222,7 +160,7 @@ export function About() {
                         </p>
                     </Card>
                     <Card>
-                        <Icon name="objectives" /> {/* Adicionei o Icon aqui */}
+                        <Icon name="objectives" />
                         <h3 style={styles.subtitle}><strong>Objetivos</strong></h3>
                         <p style={styles.text}>
                             <strong>Geral:</strong> Desenvolver e validar uma assistente virtual que forneça informações
@@ -238,7 +176,7 @@ export function About() {
                             5. Assegurar a privacidade das informações.
                         </p>
                     </Card>
-                </Section >
+                </Section>
 
                 {/* Seções da Equipe - Mantidas como estão */}
                 <section style={styles.teamSection}>
@@ -295,7 +233,16 @@ export function About() {
                         </Slider>
                     </div>
                 </section>
-            </main >
+            </main>
         </>
+    );
+}
+
+
+export function About() {
+    return (
+        <LoadingProvider> {/* O provedor de loading envolve o conteúdo da página About */}
+            <AboutPageContent />
+        </LoadingProvider>
     );
 }
