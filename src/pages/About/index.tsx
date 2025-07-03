@@ -88,7 +88,7 @@ export function About() {
         },
         {
             name: 'Victória Emanuella',
-            role: '(DESENVOLVEDORA FRONTEND)',
+            role: '(DESENVOLVEDORA BACKEND/TESTER)',
             desc: '',
             img: '/img/emanuella.png'
         },
