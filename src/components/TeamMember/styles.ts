@@ -3,7 +3,10 @@ import { CSSProperties } from 'react';
 const teamMemberStyles: Record<string, CSSProperties | any> = {
     card: {
         padding: '30px 20px',
-        background: 'linear-gradient(to bottom, #d45e6e 0%, #8b3a45 100%)',
+        // Exemplo de gradiente com tons claros
+        background: 'linear-gradient(to bottom, #FFF7F9 0%, #FFDDE2 100%)',
+        // background: 'linear-gradient(to bottom, #d45e6e 0%, #8b3a45 100%)',
+
         borderRadius: '20px',
         boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
         margin: '0 15px',
@@ -37,7 +40,7 @@ const teamMemberStyles: Record<string, CSSProperties | any> = {
     },
     name: {
         fontSize: '1.4rem',
-        color: '#fff',
+        color: ' #8b3a45 ',
         fontWeight: 'bold',
         marginBottom: '5px',
         textAlign: 'center',
@@ -48,7 +51,7 @@ const teamMemberStyles: Record<string, CSSProperties | any> = {
     },
     role: {
         fontSize: '1rem',
-        color: '#fff',
+        color: '#8b3a45',
         opacity: 0.9,
         fontWeight: '500',
         marginBottom: '15px',
@@ -60,7 +63,7 @@ const teamMemberStyles: Record<string, CSSProperties | any> = {
     },
     description: {
         fontSize: '0.95rem',
-        color: '#fff',
+        color: '#8b3a45',
         opacity: 0.8,
         lineHeight: '1.6',
         textAlign: 'center',
