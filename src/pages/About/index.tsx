@@ -71,7 +71,12 @@ function AboutPageContent() {
         { name: 'PROF.SALES', role: '(COORDENADOR)', desc: 'Coordenador, Idealizador do Projeto e Professor de Radiologianenatis justo.', img: '/img/prof-Sales.png' },
         { name: 'CARLA LOPES', role: '(GERENTE)', desc: 'Nosso maior desafio não é só desenvolver tecnologia, mas garantir que ela chegue às mulheres que mais precisam.', img: '/img/carla.png' },
         { name: 'VITORIA LAVRSISTA', role: '(SUB GERENTE)', desc: 'Responsavel pela pesquisa de artigos e treinamento da IA', img: '/img/vitoria.png' },
-        { name: 'YGOR', role: '(ANALISTA)', desc: 'Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA', img: '/img/ygor.png' },
+        { name: 'YGOR', role: '(ANALISTA)', desc: 'A analise permite elevar o conhecimento.', img: '/img/ygor.png' },
+    ];
+    const radiologists = [
+        { name: 'SUENE SILVA', role: '(AlUNA DE RADIOLOGIA)', desc: 'Participei da construção da Rosa IA, contribuindo para o desenvolvimento de conteúdos educativos sobre câncer de mama.', img: '/img/suene.png' },
+        { name: 'JÚLIA QUINTINO', role: '(AlUNA DE RADIOLOGIA)', desc: '', img: '/img/julia.png' },
+        { name: 'AMANDA MONIKY', role: '(AlUNA DE RADIOLOGIA)', desc: '', img: '/img/amanda.png' }
     ];
 
     const developers = [
@@ -202,7 +207,7 @@ function AboutPageContent() {
                     <h3 style={styles.pageTitle}>Radiologistas:</h3>
                     <div style={styles.carouselContainer}>
                         <Slider {...carouselSettings}>
-                            {/* {radiologists.map((member, index) => (
+                            {radiologists.map((member, index) => (
                                 <div key={index} style={styles.sliderItem}>
                                     <TeamMember
                                         name={member.name}
@@ -211,7 +216,7 @@ function AboutPageContent() {
                                         img={member.img}
                                     />
                                 </div>
-                            ))} */}
+                            ))}
                         </Slider>
                     </div>
                 </section>
