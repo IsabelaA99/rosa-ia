@@ -3,10 +3,7 @@ import { CSSProperties } from 'react';
 const teamMemberStyles: Record<string, CSSProperties | any> = {
     card: {
         padding: '30px 20px',
-        // Exemplo de gradiente com tons claros
         background: 'linear-gradient(to bottom, #FFF7F9 0%, #FFDDE2 100%)',
-        // background: 'linear-gradient(to bottom, #d45e6e 0%, #8b3a45 100%)',
-
         borderRadius: '20px',
         boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
         margin: '0 15px',

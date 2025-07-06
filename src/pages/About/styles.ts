@@ -1,7 +1,7 @@
-// src/pages/About/styles.ts
 import { CSSProperties } from 'react';
 
-export const styles: Record<string, CSSProperties> = {
+// Estilos base (para desktop ou telas maiores)
+const baseStyles: Record<string, CSSProperties> = {
     main: {
         maxWidth: '80%',
         margin: '0 auto',
@@ -47,4 +47,53 @@ export const styles: Record<string, CSSProperties> = {
     sliderItem: {
         padding: '0 10px',
     },
+};
+
+// Estilos que serão SOBRESCRITOS em telas mobile (<= 768px)
+const mobileStyles: Record<string, CSSProperties> = {
+    main: {
+        maxWidth: '100%',
+        padding: '1rem',
+    },
+    pageTitle: {
+        fontSize: '2rem',
+        marginBottom: '2rem',
+    },
+    subtitle: {
+        fontSize: '1.2rem',
+        marginTop: '1rem',
+    },
+    text: {
+
+        fontSize: '1rem',
+    },
+    icon: {
+        width: '4rem',
+        height: '4rem',
+    },
+    teamSection: {
+        padding: '1.5rem 0',
+    },
+    carouselContainer: {
+        padding: '0 0.5rem',
+    },
+    sliderItem: {
+        padding: '0 5px',
+    },
+};
+
+// Função que combina os estilos, exatamente como na sua Home
+export const getStyles = (isMobile: boolean): Record<string, CSSProperties> => {
+    if (!isMobile) {
+        return baseStyles;
+    }
+
+    // Combina os estilos base com os de mobile, dando prioridade para os de mobile
+    return Object.keys(baseStyles).reduce((acc, key) => {
+        acc[key] = {
+            ...baseStyles[key],
+            ...(mobileStyles[key] || {}),
+        };
+        return acc;
+    }, {} as Record<string, CSSProperties>);
 };

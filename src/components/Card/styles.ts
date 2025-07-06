@@ -1,6 +1,7 @@
 import { CSSProperties } from 'react';
 
-export const cardStyles: Record<string, CSSProperties> = {
+// Estilos para Desktop
+const baseStyles: Record<string, CSSProperties> = {
     container: {
         flex: '1',
         minWidth: '300px',
@@ -12,28 +13,53 @@ export const cardStyles: Record<string, CSSProperties> = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        textAlign: 'center',
+        textAlign: 'left',
         gap: '20px',
-
     },
+    // No desktop, o layout é horizontal (lado a lado)
     horizontalLayout: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        textAlign: 'left',
-
+        alignItems: 'flex-start', // Alinha os itens no topo do card
     },
     content: {
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        gap: '1rem'
+        width: '100%',
     },
     image: {
         width: '300px',
+        maxWidth: '100%',
         height: 'auto',
         borderRadius: '10px',
         objectFit: 'cover',
-
     }
+};
+
+// Apenas os estilos que MUDAM no mobile
+const mobileStyles: Record<string, CSSProperties> = {
+    // AQUI ESTÁ A MUDANÇA PRINCIPAL
+    // No mobile, o layout horizontal deve se comportar como o vertical.
+    horizontalLayout: {
+        flexDirection: 'column',
+        alignItems: 'center', // Alinha ao centro, como o container padrão
+    },
+    image: {
+        width: '100%',
+    }
+};
+
+// Função que combina os estilos, exatamente como nas suas páginas
+export const getCardStyles = (isMobile: boolean): Record<string, CSSProperties> => {
+    if (!isMobile) {
+        return baseStyles;
+    }
+    // Combina os estilos, dando prioridade para os de mobile
+    return Object.keys(baseStyles).reduce((acc, key) => {
+        acc[key] = {
+            ...baseStyles[key],
+            ...(mobileStyles[key] || {}),
+        };
+        return acc;
+    }, {} as Record<string, CSSProperties>);
 };
