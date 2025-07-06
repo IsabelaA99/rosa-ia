@@ -76,7 +76,7 @@ function AboutPageContent() {
         { name: 'PROF.SALES', role: '(COORDENADOR)', desc: '"Coordenador, Idealizador do Projeto e Professor de Radiologianenatis justo."', img: '/img/prof-Sales.png' },
         { name: 'CARLA LOPES', role: '(GERENTE)', desc: '"Nosso maior desafio não é só desenvolver tecnologia, mas garantir que ela chegue às mulheres que mais precisam."', img: '/img/carla.png' },
         { name: 'VITORIA LAVRSISTA', role: '(SUB GERENTE)', desc: '"Responsavel pela pesquisa de artigos e treinamento da IA."', img: '/img/vitoria.png' },
-        { name: 'YGOR', role: '(ANALISTA)', desc: '"A analise permite elevar o conhecimento."', img: '/img/ygor.png' },
+
     ];
     const radiologists: TeamMemberData[] = [
         { name: 'SUENE SILVA', role: '(AlUNA DE RADIOLOGIA)', desc: '"Participei da construção da Rosa IA, contribuindo para o desenvolvimento de conteúdos educativos sobre câncer de mama."', img: '/img/suene.png' },
@@ -88,6 +88,7 @@ function AboutPageContent() {
         { name: 'Victória Emanuella', role: '(DESENVOLVEDORA BACKEND/TESTER)', desc: '', img: '/img/emanuella.png' },
         { name: 'DAVI ARAGÃO', role: '(DESENVOLVEDOR FULLSTACK)', desc: '"Desenvolvedor Full-Stack & Responsável pelo Site do Rosa.IA"', img: '/img/davi.png' },
         { name: 'VICTOR AUGUSTO', role: '(DESENVOLVEDOR BACKEND)', desc: '"Desenvolvedor Backend"', img: '/img/victor.png' },
+        { name: 'YGOR', role: '(ANALISTA)', desc: '"A analise permite elevar o conhecimento."', img: '/img/ygor.png' },
         { name: 'MARCOS', role: '(UX/UI DESIGN)', desc: '"UX/UI Designer do Rosa.IA, focado em acessibilidade e experiência intuitiva para democratizar a prevenção."', img: '/img/marcos.png' },
         { name: 'LUCAS', role: '(DESENVOLVEDOR BACKEND)', desc: '"Desenvolvedor Backend, responsavel pela pesquisa de artigos e treinamento da IA"', img: '/img/lucas.png' },
     ];
