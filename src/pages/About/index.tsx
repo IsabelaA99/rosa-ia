@@ -203,7 +203,7 @@ function AboutPageContent() {
                 </section>
 
                 <section style={styles.teamSection}>
-                    <h3 style={styles.pageTitle}>Tecnologia em Radiologistas:</h3>
+                    <h3 style={styles.pageTitle}>Tecnologia em Radiologia:</h3>
                     <div style={styles.carouselContainer}>
                         <Slider {...carouselSettings}>
                             {radiologists.map((member, index) => (
