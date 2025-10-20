@@ -29,6 +29,9 @@ export function Navbar() {
   function aboutFunc() {
     navigate('/sobre');
   }
+  function tecnologiaFunc() {
+    navigate('/tenologias');
+  }
   function aindaNao() {
     alert('Em desenvolvimento...')
   }
@@ -40,10 +43,10 @@ export function Navbar() {
       {!isMobile && (
         <ul style={styles.ul}>
           <li onClick={homeFunc} style={styles.li}><strong>HOME</strong></li>
-          <li onClick={aboutFunc} style={styles.li}><strong>SOBRE</strong></li>
+          <li onClick={aindaNao} style={styles.li}><strong>COMO UTILIZAR</strong></li>
           <li onClick={aindaNao} style={styles.li}><strong>SERVIÇOS</strong></li>
-          <li onClick={aindaNao} style={styles.li}><strong>TECNOLOGIAS</strong></li>
-          <li onClick={aindaNao} style={styles.li}><strong>COMO FAZER</strong></li>
+          <li onClick={tecnologiaFunc} style={styles.li}><strong>TECNOLOGIAS</strong></li>
+          <li onClick={aboutFunc} style={styles.li}><strong>SOBRE</strong></li>
           <li onClick={aindaNao}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
           <li onClick={aindaNao}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
         </ul>
@@ -66,10 +69,10 @@ export function Navbar() {
                   size={24}
                   color="#8b3a45"
                   onClick={() => setIsMenuOpen(false)} style={styles.closeIcon} />
-                <li onClick={aboutFunc} style={styles.li}><strong>SOBRE</strong></li>
+                <li onClick={aboutFunc} style={styles.li}><strong>COMO UTILIZAR</strong></li>
                 <li onClick={aboutFunc} style={styles.li}><strong>SERVIÇOS</strong></li>
-                <li onClick={aboutFunc} style={styles.li}><strong>TECNOLOGIAS</strong></li>
-                <li onClick={aboutFunc} style={styles.li}><strong>COMO FAZER</strong></li>
+                <li onClick={tecnologiaFunc} style={styles.li}><strong>TECNOLOGIAS</strong></li>
+                <li onClick={aboutFunc} style={styles.li}><strong>SOBRE</strong></li>
                 <li onClick={aboutFunc}><button style={styles.btnNav}><strong>CADASTRE-SE</strong></button></li>
                 <li onClick={aboutFunc}><button style={styles.btn2Nav}><strong>ENTRAR</strong></button></li>
               </div>
