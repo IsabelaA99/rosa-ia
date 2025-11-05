@@ -46,7 +46,7 @@ const baseStyles: Record<string, CSSProperties> = {
         margin: '0 auto',
         padding: '0 1rem',
     },
-
+    
     // NOVO: Estilos para o Card de Tecnologia individual
     technologyCardWrapper: {
         background: '#ffffff',
