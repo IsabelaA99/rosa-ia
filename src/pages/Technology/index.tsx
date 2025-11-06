@@ -4,6 +4,7 @@ import { LoadingProvider, useLoading } from '../../contexts/LoadingContext';
 import { getStyles } from './styles';
 import { DiCss3, DiHtml5, DiJavascript1, DiNodejsSmall, DiPython, DiReact } from 'react-icons/di';
 import { SiExpo, SiTypescript, SiTwilio, SiGooglecloud } from 'react-icons/si';
+import { FaHospital, FaHeartbeat, FaUserMd } from 'react-icons/fa';
 
 interface TechnologyData {
     name: string;
@@ -63,6 +64,14 @@ function TecnologyPageContent() {
         { name: 'CSS', description: 'Linguagem de folhas de estilo para estilizar a aplicação.', icon: <DiCss3 /> },
     ];
 
+    const database: TechnologyData[] = [
+        { name: 'OMS', description: 'Organização que inspira o foco em saúde e bem-estar do projeto.', icon: <FaHeartbeat /> },
+        { name: 'Inca', description: 'Referência ao instituto que promove ações de prevenção e pesquisa sobre o câncer.', icon: <FaHospital /> },
+        { name: 'Ministério da Saúde', description: 'Parceiro conceitual que representa políticas públicas e acesso à informação.', icon: <FaUserMd /> },
+    ];
+
+
+
 return (
     <>
         <Navbar />
@@ -87,6 +96,16 @@ return (
                         ))}
                     </div>
                 </section>
+
+                <section style={styles.technologyGridSection}>
+                    <h3 style={styles.subtitle}>Fontes de Informação:</h3>
+                    <div style={styles.technologyGridContainer}>
+                        {database.map((tech, index) => (
+                            <TechnologyCard key={index} data={tech} styles={styles} />
+                        ))}
+                    </div>
+                </section>
+                
             </main>
         )}
     </>
